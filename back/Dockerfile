@@ -1,6 +1,6 @@
 FROM tensorflow/tensorflow
 
-EXPOSE 6000:6000
+EXPOSE 6000
 
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
@@ -10,7 +10,6 @@ COPY . /back
 
 ENV NUMBA_CACHE_DIR=/tmp/numba_cache
 
-RUN useradd appuser && chown -R appuser /back
-USER appuser
+#CMD ["cat","app.py"]
 
-CMD ["python","app.py","&"]
+CMD ["python","app.py"]
