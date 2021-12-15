@@ -1,16 +1,11 @@
 version: '3'
 services:
   backend:
-    build:
-      context: ./back
-      dockerfile: ./Dockerfile
-    restart: always
+    build: ./back
     ports:
      - "6000:6000"
     
   frontend:
-    build:
-      context: ./front
-      dockerfile: ./Dockerfile
+    build: ./front
     ports:
       - "7000:7000"

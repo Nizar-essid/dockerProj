@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM tensorflow/tensorflow
 
 EXPOSE 6000
 
@@ -10,7 +10,7 @@ COPY . /back
 
 ENV NUMBA_CACHE_DIR=/tmp/numba_cache
 
-RUN useradd appuser && chown -R appuser /app
+RUN useradd appuser && chown -R appuser /back
 USER appuser
 
 CMD ["python","app.py"]
